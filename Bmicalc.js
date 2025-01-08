@@ -1,37 +1,44 @@
-const display = document.getElementById("display");
-const weight = parseFloat(document.getElementById("weight").value);
-const height = parseFloat(document.getElementById("height").value);
-const calculate=document.getElementById("calcbtn");
-const clear=document.getElementById("clrbtn");
+function displaybmi() {
+    try {
+        let height = document.querySelector("#height").value;
+        let weight = document.querySelector("#weight").value;
+        let display = document.querySelector("#display");
+        const wunit = document.querySelector("#wunit").value;
+        const hunit = document.querySelector("#hunit").value;
 
 
 
-// function displaybmi(){
-//     //const display = document.getElementById("display");
-//     //const weight = parseFloat(document.getElementById("weight").value);
-//     //const height = parseFloat(document.getElementById("height").value);
-//     const result  = (weight/(height*height)) * 10000;
-//     console.log(weight);
-//     console.log(height);
-//     //display.value = result;
-    
-    
-//     }
 
-function clearbmi(){
-        display.value="";
-        weight = 0;
-        height =0;
+
+
+        const newheight = height / 100
+        const result = weight / (newheight * newheight);
+        display.value = "BMI="+result;
+
+    } catch (e) {
+        console.log("an error accured:", e.message);
+        display.value = "Please enter valid numbers";
+
+
     }
 
+}
+
+function clearbmi() {
+    document.querySelector("#height").value = "";
+    document.querySelector("#weight").value = "";
+    document.querySelector("#display").value = "";
+
+}
 
 
 
 
-calculate.addEventListener("click",()=>{
-    console.log("hello");
-})
 
+const calcbtn = document.querySelector("#calcbtn");
+calcbtn.onclick = displaybmi;
 
-clear.onclick = clearbmi;
+const clrbtn = document.querySelector("#clrbtn");
+clrbtn.onclick = clearbmi;
+
 
