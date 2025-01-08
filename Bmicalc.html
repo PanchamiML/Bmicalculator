@@ -1,49 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Calculator</title>
-    <link rel="stylesheet" href="Bmicalc.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="Bmicalc.css">
+
 </head>
+
 <body>
-    <div class="content">
-       
-<div class="heading">Adult and Child BMI Calculator</div>
-<div class="ipsection">
-    
+  <div class="content">
+
+    <div class="heading">Adult and Child BMI Calculator</div>
+    <div class="ipsection">
+
       <form>
-        <label>Calculate BMI for:</label><span><select><option>Child Age below 18</option><option>Age Above 18</option><option>Age Above 30</option></select></span>
+        <label>Calculate BMI for:</label><span><select>
+            <option>Child Age below 18</option>
+            <option>Age Above 18</option>
+            <option>Age Above 30</option>
+          </select></span>
         <br>
-        <label>Weight:</label><input type="number"><span><select><option>pounding</option><option>Kilograms</option></select></span>
         <br>
-        <label>Height:</label><input type="number"><span><select><option>feet</option><option>inches</option><option>centimeters</option></select></span>
+        <label>Weight:</label><input type="number" id="weight"><span><select>
+            <option>pounding</option>
+            <option>Kilograms</option>
+          </select></span>
+        <br>
+        <br>
+        <label>Height:</label><input type="number" id="height"><span><select>
+            <option>feet</option>
+            <option>inches</option>
+            <option>centimeters</option>
+          </select></span>
 
-      </form> 
+      </form>
     </div>
-      <div class="calculationsection">
-        <button>Clear</button>
-        <button class="calcbtn">Calculate</button>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-<input type="text" id="display" readonly/>
-        
-        
-            
-       
+    <div class="calculationsection">
+      <button id="clrbtn">Clear</button>
+      <button id="calcbtn">Calculate</button>
     </div>
 
-    
+
+
+
+
+
+
+
+
+
+    <div class="heading2">RESULT</div> 
+    <input type="text" id="display" readonly />
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>BMI</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hilight1"> <=18.4</td>
+            <td>Underweight</td>
+          </tr>
+          <tr>
+            <td class="hilight2">18.5-24.9</td>
+            <td>Normal</td>
+          </tr>
+          <tr>
+            <td class="hilight3">25.0-39.9</td>
+            <td>Overweight</td>
+          </tr>
+          <tr>
+            <td class="hilight4">>=40</td>
+            <td>Obese</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+  
+</div>
+
+
 </body>
+
 </html>
