@@ -3,17 +3,35 @@ function displaybmi() {
         let height = document.querySelector("#height").value;
         let weight = document.querySelector("#weight").value;
         let display = document.querySelector("#display");
-        const wunit = document.querySelector("#wunit").value;
-        const hunit = document.querySelector("#hunit").value;
+        let wunit = document.querySelector("#wunit").value;
+        let hunit = document.querySelector("#hunit").value;
+        let heightinch = document.querySelector("#heightinch").value;
+
+        let newweight;
+        let newheight;
+        let feetheight;
 
 
+        if (wunit === "Kilograms") {
+            newweight = weight
+
+        } else {
+            newweight = weight * 0.453592
+        }
+
+        if (hunit === "centimeters") {
+            newheight = height / 100;
+
+        } else {
+            feetheight = Number(height + "." + heightinch);
 
 
+            newheight = feetheight * 0.3048;
 
+        }
 
-        const newheight = height / 100
-        const result = weight / (newheight * newheight);
-        display.value = "BMI="+result;
+        const result = newweight / (newheight * newheight);
+        display.value = "BMI=" + result;
 
     } catch (e) {
         console.log("an error accured:", e.message);
